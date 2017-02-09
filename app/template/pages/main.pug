@@ -1,4 +1,20 @@
-- var list = ["Кондиционеры", "Кухни", "Пластиковые окна"]
+- var directionCompany = ["Кондиционеры", "Кухни", "Пластиковые окна"]
+-var menuDirectory = ["Матовые", "Глянцевые", "Сатиновые", "Тканевые", "Резные", "Парящие", "Звездное небо", "Двухуровневые"]
+-var menuPhoto = ["Печать на поверхностях", "Технология фотопечати", "Каталог фотопечати"]
+-var menuServices = ["Договор на дому", "Замена полотна", "Слив воды", "Бесплатный замер", "Установка", "Ремонт", "Рассрочка"]
+-var menuAboutCompany = ["Сотрудники", "Отзывы", "Вакансии"]
+mixin menu(items)
+    each item in items
+        li: a(href="#") #{item}
+mixin headerSlider(sliderTitle, sliderTitle2, sliderAnnonce, sliderAnnonce2, sliderBtn)
+    .slider-text
+        .container.wrapper
+            .slider-text--info
+                .slider-title #{sliderTitle}
+                .slider-title #{sliderTitle2}
+                .slider-annonce #{sliderAnnonce}
+                .slider-annonce #{sliderAnnonce2}
+                a.slider__btn(href="#") Узнать подробнее
 doctype html
 html
     head
@@ -13,7 +29,7 @@ html
         .tek_url_val http://potolki-ts.ru/vladivostok/
         .cookie_val REFERER - http://potolki-ts.ru/vladivostok/:::URL - http://potolki-ts.ru/vladivostok/:::UTM -
         #panel
-        .overflow
+        header.overflow
             .overlay
             .top
                 .container
@@ -39,6 +55,817 @@ html
                         .list
                             span.blue Другие направления компании
                             ul
-                                each item in list
-                                    li: a(href="#") #{item}
+                                +menu(directionCompany)
+                    .search
+                        .search-form
+                            form()
+                                input(size="15" name="q" id="qplSKIW" value="" class="search-suggest blue" type="text" autocomplete="off" placeholder="Поиск")
+                                input(name="s" class="button" type="submit" value="Поиск")
+
+                    .socseti
+                        a(href="#" class="youtube")
+                        a(href="#" class="od")
+                        a(href="#" class="inst")
+                        a(href="#" class="vk")
+                        span.we Мы в соцсетях:
+
+            .clear
+            .header
+                .container
+                    a(class="logo" href="/vladivostok/" title="Твой стиль - фабрика натяжных потолков")
+                        span
+                    .based
+                    a(href="/vladivostok/price.xls" class="price no-trans" target="_blank" title="Скачать прайс-лист")
+                        div Скачать
+                        span прайс - лист
+
+                    a(href="/vladivostok/kalkulyator/" class="calculator no-trans" title="Онлайн-калькулятор")
+                        div Онлайн
+                        span калькулятор
+                    a(href="/order-zamer/" class="button  fbajax" title="Вызов замерщика") Вызов замерщика
+                    a(href="/order-call/" class="phone nostyle fbajax" title="Заявка на обратный звонок")
+                        sup
+                        .num
+                            i 8 800
+                            |&nbsp;333-97-16
+                            span Круглосуточно | Бесплатно
+
+                    .menu.top-menu
+                        .container
+                            ul#horizontal-multilevel-menu
+                                li
+                                    span.root-item
+                                        span.sep
+                                        | Каталог
+                                    ul.level.level-1
+                                        li
+                                            span
+                                                | Потолки
+                                        +menu(menuDirectory)
+                                li
+                                    span.root-item
+                                        span.sep
+                                        | Фотопечать
+                                    ul.level.level-1
+                                        +menu(menuPhoto)
+                                li
+                                    span.root-item
+                                        span.sep
+                                        | Услуги
+                                    ul.level.level-1
+                                        +menu(menuServices)
+                                li
+                                    a.root-item(href="/vladivostok/skidki/") Скидки
+                                li
+                                    a.root-item(href="/foto/") Фото
+                                li
+                                    a.root-item(href="/faq/") Вопрос-ответ
+                                li
+                                    span.root-item
+                                        span.sep
+                                        | О компании
+                                    |
+                                    ul.level.level-1
+                                        +menu(menuAboutCompany)
+                                li
+                                    a.root-item(href="/vladivostok/kontakty/") Контакты
+
+                            .mobile-menu
+                                #dl-menu.dl-menuwrapper
+                                    span.dl-trigger
+                                        span#icon_mobile
+                                            span
+                                            span
+                                            span
+                                            span
+                                    ul.dl-menu
+                                        li
+                                            a.root-item(href="/vladivostok/catalog/") Каталог
+                                            ul.dl-submenu
+                                                li
+                                                    a(href="/vladivostok") Потолки
+                                                +menu(menuDirectory)
+                                        li
+                                            a.root-item(href="/vladivostok/fotopechat/") Фотопечать
+                                            ul.dl-submenu
+                                                +menu(menuPhoto)
+                                        li
+                                            a.root-item(href="/vladivostok/uslugi/") Услуги
+                                            ul.dl-submenu
+                                                +menu(menuServices)
+                                        li
+                                            a.root-item(href="/vladivostok/skidki/") Скидки
+                                        li
+                                            a.root-item(href="/vladivostok/foto/") Фото
+
+                                        li
+                                            a.root-item(href="/vladivostok/faq/") Вопрос-ответ
+                                        li
+                                            a.root-item(href="/vladivostok/o-kompanii/") О компании
+                                            ul.dl-submenu
+                                                +menu(menuAboutCompany)
+                                        li
+                                            a.root-item(href="/vladivostok/kontakty/") Контакты
+                            // /noindex
+                            .menu-clear-left
+                            .clear
+            .slider-block
+                .preloader
+                    .preloader__icon
+                .slider.fade
+                    #bx_3218110189_2987.slider-item
+                        .image(data-src="../img/main-header-slider/6bd916991e2ec3f70cb620a277c04c4d.png", data-src960="../img/main-header-slider/2f1764282ad466b45dd69759fe084962.png", data-src670="../img/main-header-slider/354d37c0c108a665233184a8fc14792f.png")
+                        +headerSlider("Фотопечать", "в подарок", "Мы дарим каждому клиенту 1 м² фотопечати", "")
+                    #bx_3218110189_2986.slider-item
+                        .image(data-src="../img/main-header-slider/4fbd763ff2c9303e55ea944658c8a245.jpg", data-src960="../img/main-header-slider/a35f2aa5e2b19d03f187acf72c0ef902.jpg", data-src670="../img/main-header-slider/3427aaa7824a8e087fa183af005a1687.jpg")
+                        +headerSlider("Второй потолок", "в подарок", "Каждое второе полотно получаете бесплатно", "")
+                    #bx_3218110189_2985.slider-item
+                        .image(data-src="../img/main-header-slider/93564179ff5b77286ff8a7c97cf8a7ca.png", data-src960="../img/main-header-slider/29e995d12280a2cbff466b855a560e18.png", data-src670="../img/main-header-slider/f6a94c36ffea138b564b497f6777fe29.png")
+                        +headerSlider("Вся квартира", "за 19 тысяч рублей", "Акция для владельцев квартир", "площадью до 40 квадратных метров")
+                    #bx_3218110189_2984.slider-item
+                        .image(data-src="../img/main-header-slider/cbb01668deaee16525f85dd8470aab75.png", data-src960="../img/main-header-slider/d7808bd9ca1f7aaae342fa2354cdf1a2.png", data-src670="../img/main-header-slider/95122a8c98865a2228402cfef4242dd2.png")
+                        +headerSlider("Беспроигрышная", "лотерея", "Получайте скидки и подарки в наших офисах", "")
+                style(type="text/css").
+                    .breadcrumb {
+                        margin-top: 0;
+                    }
+
+                    .top-menu {
+                        margin-top: 0;
+                    }
+
+                    body h1 {
+                        text-align: center;
+                    }
+        main#page-city.container
+            section.foto-our-works
+                .container
+                    .page-title
+                        h1 фото Наших работ
+                    |
+                    span.but-grey-wrap
+                        a.but-grey(href="/foto/") Посмотреть все работы
+                |
+                section.portfolio-section
+                    .portfolio-container
+                        .swiper-container.portfolio-container__slider
+                            .swiper-wrapper
+                                #bx_651765591_2888.swiper-slide
+                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/d85/d851e924f339a9212f074b9897e243a7.jpg", data-fancybox-group="thumb")
+                                        img(src="/upload/iblock/6d1/6d1e6f36f1ab14840cbb855b039128b7.jpg", alt-="Портфолио натяжной потолок14")
+                                        |
+                                        .name Портфолио натяжной потолок14
+                                        |
+                                        .area Площадь: 26 м²
+                                        |
+                                        .price
+                                            | от
+                                            span 71 200
+                                |
+                                #bx_651765591_2887.swiper-slide
+                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/f05/f05a575e8aeef697db1118fe8beae45d.jpg", data-fancybox-group="thumb")
+                                        img(src="/upload/iblock/b18/b187d1b27855ae4a8f9a4ada1d26a373.jpg", alt-="Портфолио натяжной потолок13")
+                                        |
+                                        .name Портфолио натяжной потолок13
+                                        |
+                                        .area Площадь: 10 м²
+                                        |
+                                        .price
+                                            | от
+                                            span 122 000
+                                |
+                                #bx_651765591_2886.swiper-slide
+                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/583/58324a129b385d99c008cd6b83124156.jpg", data-fancybox-group="thumb")
+                                        img(src="/upload/iblock/7e1/7e1513757a43ad38f585e12bac2c08ea.jpg", alt-="Портфолио натяжной потолок5")
+                                        |
+                                        .name Портфолио натяжной потолок5
+                                        |
+                                        .area Площадь: 16 м²
+                                        |
+                                        .price
+                                            | от
+                                            span 32 861
+                                |
+                                #bx_651765591_2885.swiper-slide
+                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/0f7/0f7def663a2648b267c6af909f01e1b4.jpg", data-fancybox-group="thumb")
+                                        img(src="/upload/iblock/ba8/ba8145518536dd50f5ba6e0a6b880cd2.jpg", alt-="Портфолио натяжной потолок4")
+                                        |
+                                        .name Портфолио натяжной потолок4
+                                        |
+                                        .area Площадь: 16 м²
+                                        |
+                                        .price
+                                            | от
+                                            span 41 400
+                                |
+                                #bx_651765591_2884.swiper-slide
+                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/cc2/cc2ba438601f0e4f2ad13cf4475767ea.jpg", data-fancybox-group="thumb")
+                                        img(src="/upload/iblock/07a/07aeb5118b7ac9d4c07a3fe2bd287b02.jpg", alt-="Портфолио натяжной потолок7")
+                                        |
+                                        .name Портфолио натяжной потолок7
+                                        |
+                                        .area Площадь: 12 м²
+                                        |
+                                        .price
+                                            | от
+                                            span 36 100
+                            |
+                            .swiper-button-next
+                            |
+                            .swiper-button-prev
+            .container
+            .not_like_our_price
+                .not_like_our_grad
+                    .container
+                        h2.not_like_our_price_title
+                            | Не нравится наша цена?
+                            br
+                            |             Предложите свою!
+                        |
+                        p.not_like_our_price_text
+                            | Договориться о дополнительной скидке у нас очень просто.
+                            br
+                            |                 Для этого нужно всего лишь отправить заявку.
+                        |
+                        a.fbajax.but-reg(href="/order-call/", title="Заказать потолок") Заказать потолок
+            .container
+                section.services
+                    .services_border
+                        .page-title
+                            h1 Услуги
+                        |
+                        .services_examples
+                            a#bx_1373509569_2872.services_item(href="/uslugi/ustanovka/")
+                                .services_foto_wrap
+                                    img.services_foto(src="/upload/iblock/523/523d5255813d51383129cc42e1c3eb41.png", alt-="Установка")
+                                |
+                                .services_name Установка
+                            |
+                            a#bx_1373509569_2870.services_item(href="/uslugi/sliv-vody/")
+                                .services_foto_wrap
+                                    img.services_foto(src="/upload/iblock/037/037f48e1f8ce319d83fda42475bc34dd.png", alt-="Слив воды")
+                                |
+                                .services_name Слив воды
+                            |
+                            a#bx_1373509569_2873.services_item(href="/uslugi/remont/")
+                                .services_foto_wrap
+                                    img.services_foto(src="/upload/iblock/4aa/4aa70dbe7e04211ff16bb3aec42a238d.png", alt-="Ремонт")
+                                |
+                                .services_name Ремонт
+                            |
+                            a#bx_1373509569_2869.services_item(href="/uslugi/zamena-polotna/")
+                                .services_foto_wrap
+                                    img.services_foto(src="/upload/iblock/e19/e19fde50dbd97b1d0e4d987b32002e11.png", alt-="Замена полотна")
+                                |
+                                .services_name Замена полотна
+            .teaser-two
+                .teaser-two-l
+                    h2.teaser-two-title Договор на дому
+                    |
+                    p.teaser-two-text
+                        | Наш специалист приедет в удобное для вас
+                        br
+                        |             время, произведет демонстрацию и даст все
+                        br
+                        |             необходимые консультации
+                    |
+                    a.fbajax.teaser-two-link(href="/order-call/") Пригласить дизайнера
+                |
+                .teaser-two-r
+                    h2.teaser-two-title Бесплатный замер
+                    |
+                    p.teaser-two-text
+                        | Технолог нашей компании произведет точный
+                        br
+                        |             замер и расчет стоимости заказа в удобное
+                        br
+                        |             для Вас время
+                    |
+                    a.fbajax.teaser-two-link(href="/order-call/") Вызвать замерщика
+            |
+            .order-ceiling
+                .container
+            |
+            section.container
+                .stages_work
+                    .stages_work_border
+                        .page-title
+                            h1 Этапы выполнения работ
+                        |
+                        .stages_work_list
+                            .stages_work_item
+                                img.stages_work_foto(alt="pic", src="/bitrix/templates/.default/images/stages_work/zamer.png")
+                                |
+                                .stages_work_name
+                                    | Замер
+                            |
+                            .stages_work_item
+                                img.stages_work_foto(alt="pic", src="/bitrix/templates/.default/images/stages_work/dizain.png")
+                                |
+                                .stages_work_name
+                                    | Дизайн
+                            |
+                            .stages_work_item
+                                img.stages_work_foto(alt="pic", src="/bitrix/templates/.default/images/stages_work/dogovor.png")
+                                |
+                                .stages_work_name
+                                    | Договор
+                            |
+                            .stages_work_item
+                                img.stages_work_foto(alt="pic", src="/bitrix/templates/.default/images/stages_work/montaz.png")
+                                |
+                                .stages_work_name
+                                    | Монтаж
+                            |
+                            .stages_work_item
+                                img.stages_work_foto(alt="pic", src="/bitrix/templates/.default/images/stages_work/prinyatie-raboti.png")
+                                |
+                                .stages_work_name
+                                    | Принятие работы
+            .seo-text
+                .container
+                    .seo-text-border
+                        .seo-title
+                            h1 Натяжные потолки во Владивостоке
+                        |
+                        .seo-text-content
+                            h3 Оригинальность выбора только для вас
+                            |
+                            p
+                                | Предлагаем вам оптимальный вариант оформления потолочного пространства, а именно, установку натяжных потолков. Прочные конструкции со стильным дизайном, практичны при монтаже и долговечны в эксплуатации. Выбрать и купить качественный натяжной потолок сможет каждый житель города Владивосток. В распоряжении сотрудников фабрики натяжных потолков «Твой Стиль» есть свое собственное производство, что существенно снизит цену/стоимость проведения ремонтных работ за счет выбора стройматериалов со сроком гарантии до 15 лет.
+                            |
+                            p
+                                | Советуем ознакомиться с ассортиментом популярных в народе разновидностей натяжных потолков, в число которых входят
+                                a(href="http://potolki-ts.ru/vladivostok/potolki/gljancevye-potolki/", title="глянцевые натяжные потолки")  глянцевые
+                                | ,
+                                a(href="http://potolki-ts.ru/vladivostok/potolki/matovye-potolki/", title="матовые натяжные потолки") матовые
+                                | ,
+                                a(href="http://potolki-ts.ru/vladivostok/potolki/tkanevye-potolki/", title="тканевые натяжные потолки") тканевые
+                                |  модели, а также
+                                a(href="http://potolki-ts.ru/vladivostok/potolki/zvezdnoe-nebo/", title="звездное небо") звездное небо
+                                | ,
+                                a(href="http://potolki-ts.ru/vladivostok/potolki/dvuhurovnevye-potolki/", title="двухуровневые натяжные потолки") двухуровневые
+                                | ,
+                                a(href="http://potolki-ts.ru/vladivostok/potolki/reznye-potolki/", title="резные натяжные потолки") резные
+                                |  и
+                                a(href="http://potolki-ts.ru/vladivostok/potolki/parjashhie-potolki/", title="парящие натяжные потолки") парящие
+                                | .
+                            |
+                            p
+                                | По самым выгодным расценкам выбрать и заказать можно одноуровневую или двухуровневую конструкцию натяжных потолков.
+                            |
+                            h3 Наши преимущества
+                            |
+                            p
+                                | Учет индивидуальных пожеланий и минимальные расценки на установку - настоящая визитная карточка компании «Твой стиль». Позитивное впечатление дополнит безупречный монтаж, а также возможность оплаты заказа в
+                                a(href="http://potolki-ts.ru/uslugi/rassrochka/", title="натяжные потолки в рассрочку") рассрочку
+                                | .
+                            |
+                            h3 Замер и установка
+                            |
+                            p
+                                | Наши специалисты обеспечат бесплатный замер помещения, помогут выбрать один из лучших вариантов натяжного потолка с учетом имеющегося у вас освещения.
+                            |
+                            p
+                                | Квалифицированные рабочие обеспечат
+                                a(href="http://potolki-ts.ru/uslugi/ustanovka/", title="установка натяжных потолков") монтаж
+                                |  натяжного потолка стандартной сложности за рекордно короткий срок в 3 часа.
+                            |
+                            h3 Цена и договор
+                            |
+                            p
+                                | Минимальная цена за квадратный метр при заказе натяжных потолков составит 390 рублей.
+                                a(href="http://potolki-ts.ru/vladivostok/kalkulyator/", title="расчет натяжного потолка") Онлайн-калькулятор
+                                |  поможет экономно составить заказ. Участвуйте в
+                                a(href="http://potolki-ts.ru/vladivostok/skidki/", title="акции и скидки на натяжные потолки") акциях
+                                |  и выбирайте качественный потолок по гарантировано выгодной цене.
+                            |
+                            p
+                                | Сотрудники нашей фирмы обеспечит вам возможность подобрать светильники и откровенно расскажут обо всех плюсах сотрудничества.
+                            |
+                            h3 Доверьте ремонт профессионалам!
+                            |
+                            p
+                                | С целью продолжения сотрудничества, предлагаем ознакомиться с отзывами и посмотреть
+                                a(href="http://potolki-ts.ru/foto/", title="натяжные потолки фото") примеры работы
+                                |  в городе Владивосток всем нашим клиентам. Сделать это можно прямо сейчас на нашем сайте, открыв каталог на этой странице.
+        #comp_39b52b26cfce7ada42c7016e28d8a094
+            form(name="SIMPLE_FORM_1_ROCAD", action="/vladivostok/", method="POST", enctype="multipart/form-data")
+                input#bxajaxid_39b52b26cfce7ada42c7016e28d8a094_8BACKi(type="hidden", name="bxajaxid", value="39b52b26cfce7ada42c7016e28d8a094")
+                input(type="hidden", name="AJAX_CALL", value="Y")
+                script(type="text/javascript").
+                    function _processform_8BACKi() {
+                        var obForm = top.BX('bxajaxid_39b52b26cfce7ada42c7016e28d8a094_8BACKi').form;
+                        top.BX.bind(obForm, 'submit', function () {
+                            BX.ajax.submitComponentForm(this, 'comp_39b52b26cfce7ada42c7016e28d8a094', true)
+                        });
+                        top.BX.removeCustomEvent('onAjaxSuccess', _processform_8BACKi);
+                    }
+                    if (top.BX('bxajaxid_39b52b26cfce7ada42c7016e28d8a094_8BACKi'))
+                        _processform_8BACKi();
+                    else
+                        top.BX.addCustomEvent('onAjaxSuccess', _processform_8BACKi);
+                input#sessid(type="hidden", name="sessid", value="c35b6339bd7f8169d0fdde2ab8bae1b4")
+                input(type="hidden", name="WEB_FORM_ID", value="7")
+                input(type="hidden", name="lang", value="ru")
+                |
+                .request-call
+                    .request-call-in
+                        p.request-call-title
+                            | ОСТАЛИСЬ ВОПРОСЫ ИЛИ
+                            br
+                            |      ЖЕЛАЕТЕ ЗАПИСАТЬСЯ НА БЕСПЛАТНЫЙ ЗАМЕР
+                        |
+                        |
+                        p.request-call-leave
+                            | Оставьте ваши контактные данные и наш специалист
+                            span.request-call-red свяжется с вами в течении 5 минут
+                        |
+                        |
+                        .request-call-form
+                            input.request-call-form-text(type="text", placeholder="Ваше имя", name="form_text_71", value="", size="0")
+                            |
+                            input.request-call-form-tel(type="text", placeholder="Телефон", name="form_text_72", value="", size="0")
+                            |
+                            input.request-call-form-submit(type="submit", name="web_form_submit", value="Позвонить")
+                            |
+                            input(type="hidden", name="form_hidden_78", value="Контроль")
+                            input(type="hidden", name="form_hidden_80", value="WEB")
+                        |
+                        |
+                        .gorod
+                            select#form_dropdown_UF_CRM_1478533058.inputselect(name="form_dropdown_UF_CRM_1478533058")
+                                option(value="81") БЛАГОВЕЩЕНСК
+                                option(value="82") ВЛАДИВОСТОК
+                                option(value="83") КРАСНОДАР
+                                option(value="84") НАХОДКА
+                                option(value="85") УССУРИЙСК
+                                option(value="86") ХАБАРОВСК
+                                option(value="87") СОЧИ
+                                option(value="88") АРТЕМ
+                        |
+                        |
+                        .detect
+                            input.inputtext(type="text", name="form_text_89", value="", size="0")
+                        |
+                        |
+                        .tek_url
+                            input.inputtext(type="text", name="form_text_90", value="", size="0")
+                        |
+                        |
+                        .cookie
+                            input.inputtext(type="text", name="form_text_91", value="", size="0")
+                        |
+                        script.
+                            $(".request-call-form-tel").mask("+7 (999) 999-9999");
+        footer
+            .footer-top
+                .footer-top-in
+                    .left
+                        .logo
+                            a(href="/")
+                                img(src="/bitrix/templates/.default/images/1/logo-footer.png", alt="Логотип")
+                        |
+                        .tel
+                            .word Телефон
+                            |
+                            a(href="tel:88003339716") 8 800 333-97-16
+                        |
+                        .email
+                            .word E-mail
+                            |
+                            a(href="mailto:stil-vlad@mail.ru") stil-vlad@mail.ru
+                        |
+                        .office
+                            img(src="/bitrix/templates/.default/images/1/address.png", alt="pic")
+                            |
+                            a(href="/vladivostok/kontakty/") Наши офисы
+                        |
+                        |
+                        .social
+                            a.youtube(href="#")
+                            |
+                            |
+                            a.ok(href="#")
+                            |
+                            a.instagram(href="#")
+                            |
+                            a.vk(href="#")
+                    |
+                    .right
+                        ul
+                            li О Компании
+                            li
+                                a(href="/vladivostok/o-kompanii/sotrudniki/") Сотрудники
+                            li
+                                a(href="/vladivostok/o-kompanii/otzyvy/") Отзывы
+                            li
+                                a(href="/vladivostok/o-kompanii/vakansii/") Вакансии
+                        ul
+                            li УСЛУГИ
+                            li
+                                a(href="/uslugi/ustanovka/") Установка
+                            li
+                                a(href="/uslugi/remont/") Ремонт
+                            li
+                                a(href="/uslugi/sliv-vody/") Слив воды
+                            li
+                                a(href="/uslugi/zamena-polotna/") Замена полотна
+                        ul
+                            li Фактуры
+                            li
+                                a(href="/vladivostok/potolki/matovye-potolki/") Матовые
+                            li
+                                a(href="/vladivostok/potolki/gljancevye-potolki/") Глянцевые
+                            li
+                                a(href="/vladivostok/potolki/satinovye-potolki/") Сатиновые
+                            li
+                                a(href="/vladivostok/potolki/tkanevye-potolki/") Тканевые
+                        ul
+                            li Технологии
+                            li
+                                a(href="/vladivostok/potolki/reznye-potolki/") Резные
+                            li
+                                a(href="/vladivostok/potolki/parjashhie-potolki/") Парящие
+                            li
+                                a(href="/vladivostok/potolki/zvezdnoe-nebo/") Звездное небо
+                            li
+                                a(href="/vladivostok/potolki/dvuhurovnevye-potolki/") Двухуровневые
+                        ul
+                            li Помещения
+                            li
+                                a(href="/vladivostok/potolki/potolok-v-zale/") Зал
+                            li
+                                a(href="/vladivostok/potolki/potolok-na-kuhne/") Кухня
+                            li
+                                a(href="/vladivostok/potolki/potolok-v-vannoj/") Ванная
+                            li
+                                a(href="/vladivostok/potolki/potolok-v-spalne/") Спальня
+                            li
+                                a(href="/vladivostok/potolki/potolok-v-detskoj/") Детская
+                            li
+                                a(href="/vladivostok/potolki/potolok-v-gostinnoj/") Гостиная
+                            li
+                                a(href="/vladivostok/potolki/potolok-v-prihozhej/") Прихожая
+                            li
+                                a(href="/vladivostok/potolki/potolok-na-mansarde/") Мансарда
+                        ul
+                            li ФОТОПЕЧАТЬ
+                            li
+                                a(href="/fotopechat/katalog-fotopechati/") Каталог
+                            li
+                                a(href="/fotopechat/pechat-na-poverhnostjah/") Печать на поверхности
+                            li
+                                a(href="/fotopechat/tehnologija-fotopechati/") Технология печати
+                        ul
+                            li
+                                a(href="/foto/") Фото
+                            li
+                                a(href="/vladivostok/skidki/") Скидки
+                            li
+                                a(href="/uslugi/rassrochka/") Рассрочка
+                            li
+                                a(href="/faq/") Вопрос-ответ
+                        |
+                        |
+                        |
+                        .prof
+                            | Доверяй профессионалам!
+                    |
+                    .bottom
+                        p.copy
+                            | © 2003-2016
+                            a(href="#") ООО "Твой Стиль"
+                            |
+                            span.all Все права защищены
+                        |
+                        .development
+                            a(href="#")
+                                span Разработка и продвижение -
+            |
+            |
+            noindex
+                .footer-bottom
+                    .footer-bottom-in
+                        p.other1 Посетите сайты наших других направлений:
+                        |
+                        p.other2 Другие направления:
+                        |
+                        ul
+                            li
+                                a.cond(href="#") Кондиционеры
+                            |
+                            li
+                                a.meb(href="#") Мебель
+                            |
+                            li
+                                a.win(href="#") Окна
+        #mailmy.order(style="display:none;")
+            form(name="SIMPLE_FORM_1", action="/vladivostok/", method="POST", enctype="multipart/form-data")
+                input#sessid_1(type="hidden", name="sessid", value="c35b6339bd7f8169d0fdde2ab8bae1b4")
+                input(type="hidden", name="WEB_FORM_ID", value="1")
+                input(type="hidden", name="lang", value="ru")
+                |
+                h4 Обратный звонок
+                |
+                div
+                    .leave
+                        | Оставьте ваши контактные данные и наш специалист свяжется с вами в течение 5 минут
+                |
+                .input
+                    span.label
+                        | Ваше имя
+                        font(color="red")
+                            span.form-required.starrequired *
+                    input.inputtext(type="text", name="form_text_1", value="", size="0")
+                |
+                .input.inputPhone
+                    span.label
+                        | Ваш номер телефона
+                        font(color="red")
+                            span.form-required.starrequired *
+                    |
+                    input.inputtext(type="text", name="form_text_2", value="", size="0")
+                |
+                |
+                input(type="hidden", name="form_hidden_57", value="Контроль")
+                input(type="hidden", name="form_hidden_59", value="WEB")
+                |
+                .gorod
+                    select#form_dropdown_UF_CRM_1478533058.inputselect(name="form_dropdown_UF_CRM_1478533058")
+                        option(value="60") БЛАГОВЕЩЕНСК
+                        option(value="61") ВЛАДИВОСТОК
+                        option(value="62") КРАСНОДАР
+                        option(value="63") НАХОДКА
+                        option(value="64") УССУРИЙСК
+                        option(value="65") ХАБАРОВСК
+                        option(value="66") СОЧИ
+                        option(value="67") АРТЕМ
+                |
+                .detect
+                    input.inputtext(type="text", name="form_text_68", value="", size="0")
+                |
+                .tek_url
+                    input.inputtext(type="text", name="form_text_69", value="", size="0")
+                |
+                .cookie
+                    input.inputtext(type="text", name="form_text_70", value="", size="0")
+                |
+                .formActions
+                    input(type="submit", name="web_form_submit", value="Позвонить")
+                |
+                script.
+                    $(".inputPhone input").mask("+7 (999) 999-9999");
+        #cupon.order(style="display:none;")
+            form(name="SIMPLE_FORM_3", action="/vladivostok/", method="POST", enctype="multipart/form-data")
+                input#sessid_2(type="hidden", name="sessid", value="c35b6339bd7f8169d0fdde2ab8bae1b4")
+                input(type="hidden", name="WEB_FORM_ID", value="3")
+                input(type="hidden", name="lang", value="ru")
+                |
+                h4 Заказать купон
+                |
+                .input
+                    span.label Ваш e-mail*
+                    input.inputtext(type="text", name="form_email_7", value="", size="0")
+                    input(type="submit", name="web_form_submit", value="Отправить")
+        .orderCallOk(style="display:none;")
+            .close
+            |
+            p мы свяжемся с Вами в течении 5 минут
+        a.fancybox.mail-dir(href="#mail-dir", title="Написать директору")
+        #mail-dir.order(style="display:none;")
+            form(name="SIMPLE_FORM_5", action="/vladivostok/", method="POST", enctype="multipart/form-data")
+                input#sessid_3(type="hidden", name="sessid", value="c35b6339bd7f8169d0fdde2ab8bae1b4")
+                input(type="hidden", name="WEB_FORM_ID", value="5")
+                input(type="hidden", name="lang", value="ru")
+                |
+                h4 Написать письмо директору
+                |
+                div
+                    .dir
+                        img(src="/bitrix/templates/.default/images/repin.png", alt="Director", title="Репин А.А.")
+                        | Репин Александр Александрович
+                |
+                .input
+                    input.inputtext(type="text", name="form_text_13", value="", size="0")
+                    span.label Ваше имя*
+                |
+                .input
+                    input.inputtext(type="text", name="form_email_17", value="", size="0")
+                    span.label Ваш e-mail*
+                |
+                .input
+                    input.inputtext(type="text", name="form_text_14", value="", size="0")
+                    span.label Ваш город
+                |
+                .input
+                    input.inputtext(type="text", name="form_text_15", value="", size="0")
+                    span.label Ваш телефон
+                |
+                .input
+                    input.inputtext(type="text", name="form_text_16", value="", size="0")
+                    span.label Тема сообщения
+                |
+                .input
+                    textarea.inputtextarea(name="form_textarea_18", cols="0", rows="0")
+                |
+                input(type="submit", name="web_form_submit", value="Отправить")
+        // VLAD VK Pixel
+        script(type="text/javascript").
+            (window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=USSrMZPde4A2IJHzlNk0oX3YOq1E/s7a9M8N0FT2jXI0mZbQfVHKEvVNiaFaqRxR9LmiLVuh4gWtm1xhiTHTjo2xCCANHT/ojYE4kxaKyV*AJ2dnlGMJiEhwxfHUiyAQdNbh/lVvKeBcQcHFYfP77sSKIAfzBVUrw65qFd8VAWc-&pixel_id=1000056668';
+        // Yandex.Metrika counter
+        script(type="text/javascript").
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function () {
+                    try {
+                        w.yaCounter40202559 = new Ya.Metrika({
+                            id: 40202559,
+                            clickmap: true,
+                            trackLinks: true,
+                            accurateTrackBounce: true,
+                            webvisor: true,
+                            trackHash: true
+                        });
+                    } catch (e) {
+                    }
+                });
+                var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/watch.js";
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else {
+                    f();
+                }
+            })(document, window, "yandex_metrika_callbacks");
+        |
+        noscript
+            div
+                img(src="https://mc.yandex.ru/watch/40202559", style="position:absolute; left:-9999px;", alt="")
+        // /Yandex.Metrika counter
+        script.
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-85472546-4', 'auto');
+            ga('send', 'pageview');
+        script.
+            $(document).ready(function () {
+                var text = $(".ui-selectmenu-text").text();
+                if (text == "Артем") {
+                    text = '<option value="43">АРТЕМ</option>';
+                }
+                if (text == "Сочи") {
+                    text = '<option value="42">СОЧИ</option>';
+                }
+                if (text == "Находка") {
+                    text = '<option value="39">НАХОДКА</option>';
+                }
+                if (text == "Краснодар") {
+                    text = '<option value="38">КРАСНОДАР</option>';
+                }
+                if (text == "Уссурийск") {
+                    text = '<option value="40">УССУРИЙСК</option>';
+                }
+                if (text == "Хабаровск") {
+                    text = '<option value="41">ХАБАРОВСК</option>';
+                }
+                if (text == "Владивосток") {
+                    text = '<option value="37">ВЛАДИВОСТОК</option>';
+                }
+                if (text == "Благовещенск") {
+                    text = '<option value="36">БЛАГОВЕЩЕНСК</option>';
+                }
+                //$(".gorod input").val(text);
+                //$(".gorod").html(text);
+                $(".gorod .inputselect").empty();
+                $(".gorod .inputselect").html(text);
+                var text2 = $(".detect_val").text();
+                $('.detect').html('<input class="inputtext" name="form_text_68" value="' + text2 + '" size="0" type="text">');
+                var text3 = $(".tek_url_val").text();
+                $('.tek_url').html('<input class="inputtext" name="form_text_69" value="' + text3 + '" size="0" type="text">');
+                var text4 = $(".cookie_val").text();
+                $('.cookie').html('<input class="inputtext" name="form_text_70" value="' + text4 + '" size="0" type="text">');
+            });
+
+        script(type="text/javascript" src="../js/vendor.min.js")
+        script(type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js")
+        script(type="text/javascript" src="https://www.google.com/recaptcha/api.js")
+        script(type="text/javascript" src="../js/kernel_main.js")
+        script(type="text/javascript" src="../js/template.js")
+        script(type="text/javascript" src="../js/page.js")
+        script(type="text/javascript" src="../js/modernizr.custom.js")
+        script(type="text/javascript" src="../js/jquery.dlmenu.js")
+        script(type="text/javascript" src="../js/another.js")
 

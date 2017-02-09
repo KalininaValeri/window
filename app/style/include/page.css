@@ -928,7 +928,7 @@
 }
 @media (max-width:670px) {
     .portfolio-section__slide {
-        /* 		width:375px; */
+         		width:280px;
     }
 }
 @media (max-width:320px) {

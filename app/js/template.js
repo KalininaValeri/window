@@ -1607,23 +1607,7 @@ $(document).on('ready', function () {
         slidesPerView: 'auto',
         centeredSlides: true,
         spaceBetween: 20,
-// 	breakpoints: {
-// // 		// when window width is <= 320px
-// // 		320: {
-// // 			slidesPerView: 1,
-// // 			spaceBetween: 0
-// // 		},
-// // 		// when window width is <= 480px
-// // 		670: {
-// // 			slidesPerView: 1,
-// //
-// // 		},
-// // 		// when window width is <= 640px
-// 		960: {
-// 			slidesPerView: 2,
-// 		}
-// 	},
-        initialSlide: 2,
+        initialSlide: 4,
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         onSlideChangeEnd: function (swiper) {

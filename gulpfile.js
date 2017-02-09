@@ -26,7 +26,7 @@ gulp.task('pug-index', function () {
     return gulp.src(['app/index.pug'])
         .pipe(pug({pretty: true}))
         .pipe(gulp.dest('dist')) // указываем gulp куда положить скомпилированные HTML файлы
-        .pipe(connect.reload())
+        // .pipe(connect.reload())
 });
 
 //html-page
@@ -34,7 +34,7 @@ gulp.task('pug-page', function () {
     return gulp.src(['app/template/pages/*.pug'])
         .pipe(pug({pretty: true}))
         .pipe(gulp.dest('dist/html')) // указываем gulp куда положить скомпилированные HTML файлы
-        .pipe(connect.reload())
+        // .pipe(connect.reload())
 });
 
 //style.css
@@ -48,7 +48,7 @@ gulp.task('style-css', function () {
         .pipe(minifyCSS())
         .pipe(rename('style.min.css'))
         .pipe(gulp.dest('./dist/style'))
-        .pipe(connect.reload())
+        // .pipe(connect.reload())
 });
 
 //vendor.css
@@ -58,36 +58,36 @@ gulp.task('vendor-css', function () {
         .pipe(minifyCSS())
         .pipe(rename('vendor.min.css'))
         .pipe(gulp.dest('./dist/style'))
-        .pipe(connect.reload())
+        // .pipe(connect.reload())
 });
 
 //main.js
 gulp.task('main-js', function () {
-    return gulp.src(['./app/js/kernel_main.js', './app/js/template.js', './app/js/page.js', './app/js/vendor.js'])
-        .pipe(concat('vendor.js'))
+    return gulp.src(['./app/js/*.js'])
+        /*.pipe(concat('another.js'))
         .pipe(uglify({
             outSourceMap: true
         }))
-        .pipe(rename('main.min.js'))
+        .pipe(rename('main.min.js'))*/
         .pipe(gulp.dest('dist/js'))
-        .pipe(connect.reload())
+        // .pipe(connect.reload())
 });
 
-//vendor.js
+//another.js
 gulp.task('vendor-js', function () {
     return gulp.src(['./app/vendor/*.js'])
-        .pipe(concat('vendor.js'))
+        .pipe(concat('another.js'))
         .pipe(uglify())
         .pipe(rename('vendor.min.js'))
         .pipe(gulp.dest('./dist/js'))
-        .pipe(connect.reload())
+        // .pipe(connect.reload())
 });
 
 //copy img & fonds file
 gulp.task('copy', function () {
     gulp.src(['./app/img/**/*.*', './app/fonts/**/*.*'], {base: './app'})
         .pipe(gulp.dest('./dist'))
-        .pipe(connect.reload());
+        // .pipe(connect.reload());
 });
 
 //watch
@@ -125,6 +125,6 @@ gulp.task('build', [
     'copy'
 ]);
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['watch']);
 
 
