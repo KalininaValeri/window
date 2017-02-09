@@ -63,10 +63,12 @@ gulp.task('vendor-css', function () {
 
 //main.js
 gulp.task('main-js', function () {
-    return gulp.src('./app/js/main.js')
-        .pipe(uglify('main.min.js', {
+    return gulp.src(['./app/js/kernel_main.js', './app/js/template.js', './app/js/page.js', './app/js/vendor.js'])
+        .pipe(concat('vendor.js'))
+        .pipe(uglify({
             outSourceMap: true
         }))
+        .pipe(rename('main.min.js'))
         .pipe(gulp.dest('dist/js'))
         .pipe(connect.reload())
 });
@@ -90,7 +92,7 @@ gulp.task('copy', function () {
 
 //watch
 gulp.task('watch', function () {
-    gulp.watch(['app/style/*.scss', 'app/style/**/*.css'], ['style-css']);
+    gulp.watch(['app/style/*.scss', 'app/style/**/*.css', 'app/style/**/*.scss'], ['style-css']);
     gulp.watch(['app/vendor/**/*.css'], ['vendor-css']);
     gulp.watch(['app/index.pug'], ['pug-index']);
     gulp.watch(['app/template/*.pug', 'app/template/pages/**/*.pug', 'app/template/pages/**/*.pug'], ['pug-page']);

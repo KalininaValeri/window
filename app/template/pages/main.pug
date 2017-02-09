@@ -1,13 +1,18 @@
+- var list = ["Кондиционеры", "Кухни", "Пластиковые окна"]
 doctype html
 html
     head
         meta(charset="UTF-8")
         title Натяжные потолки во Владивостоке | Твой Стиль - установка натяжных потолков
-        link(rel="stylesheet", media="all", type="text/css", href="../../app/bundle.min.css")
-        link(rel="shortcut icon" type="image/x-icon" href="/bitrix/templates/ceiling/images/favicon.ico")
+        link(rel="stylesheet", media="all", type="text/css", href="../style/style.min.css")
+        link(rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico")
         meta(name="keywords" content="Натяжные потолки, натяжные потолки Владивосток, твой стиль потолки, твой стиль владивосток")
         meta(name="description" content="Установка натяжных потолков даже самой большой площади займет всего лишь несколько часов. А бесплатный замер поможет определиться с ценой на установку натяжных потолков")
     body
+        .detect_val computer
+        .tek_url_val http://potolki-ts.ru/vladivostok/
+        .cookie_val REFERER - http://potolki-ts.ru/vladivostok/:::URL - http://potolki-ts.ru/vladivostok/:::UTM -
+        #panel
         .overflow
             .overlay
             .top
@@ -25,6 +30,15 @@ html
                                 option(value="Хабаровск" atr="2") Хабаровск
                                 option(selected value="Владивосток" atr="4") Владивосток
                                 option(value="Благовещенск" atr="1") Благовещенск
-
-
+                    .count-ofis
+                        span В городе:
+                        a(title="Контакты, офисы" href="#")
+                            span.blue 4 офисa
+                    .areas
+                        span.img
+                        .list
+                            span.blue Другие направления компании
+                            ul
+                                each item in list
+                                    li: a(href="#") #{item}
 
