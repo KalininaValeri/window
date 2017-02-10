@@ -26,7 +26,23 @@
     display: none;
   }
 
-  .swiper-container {
-    overflow: visible;
+  .services {
+    display: block;
   }
+
+  .services_border {
+    height: auto;
+  }
+
+  .services_item {
+    width: auto;
+    margin-right: 0;
+  }
+
+  .services_examples {
+    width: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
 }
