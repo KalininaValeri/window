@@ -2574,7 +2574,7 @@ button.swiper-pagination-bullet {
 }
 
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-  background-image: url('/bitrix/templates/ceiling/fancy/source/fancybox_sprite.png');
+  background-image: url('../img/page-main/fancybox_sprite.png');
 }
 
 #fancybox-loading {
@@ -9815,7 +9815,7 @@ width: 116px;
   }
 
   .seo-text .container {
-    width: 320px;
+    //width: 320px;
   }
 
   .seo-text-border h1 {

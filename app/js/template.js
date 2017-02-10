@@ -1608,6 +1608,7 @@ $(document).on('ready', function () {
         centeredSlides: true,
         spaceBetween: 20,
         initialSlide: 4,
+        pagination: '.swiper-pagination',
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         onSlideChangeEnd: function (swiper) {

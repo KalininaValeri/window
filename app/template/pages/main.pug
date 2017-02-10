@@ -6,7 +6,7 @@
 mixin menu(items)
     each item in items
         li: a(href="#") #{item}
-mixin headerSlider(sliderTitle, sliderTitle2, sliderAnnonce, sliderAnnonce2, sliderBtn)
+mixin headerSlider(sliderTitle, sliderTitle2, sliderAnnonce, sliderAnnonce2)
     .slider-text
         .container.wrapper
             .slider-text--info
@@ -15,6 +15,14 @@ mixin headerSlider(sliderTitle, sliderTitle2, sliderAnnonce, sliderAnnonce2, sli
                 .slider-annonce #{sliderAnnonce}
                 .slider-annonce #{sliderAnnonce2}
                 a.slider__btn(href="#") Узнать подробнее
+mixin ourPhotoWork ()
+    #bx_651765591_2888.swiper-slide
+        a.portfolio-section__slide.fancybox(href="../img/page-main/our-photo-big.jpg", data-fancybox-group="thumb")
+            img(src="../img/page-main/our-photo.jpg", alt-="Портфолио натяжной потолок14")
+            .area Комплексное остекление лоджии
+            .price
+                span от 58000
+
 doctype html
 html
     head
@@ -202,76 +210,16 @@ html
                 .container
                     .page-title
                         h1 фото Наших работ
-                    |
                     span.but-grey-wrap
                         a.but-grey(href="/foto/") Посмотреть все работы
-                |
                 section.portfolio-section
                     .portfolio-container
                         .swiper-container.portfolio-container__slider
                             .swiper-wrapper
-                                #bx_651765591_2888.swiper-slide
-                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/d85/d851e924f339a9212f074b9897e243a7.jpg", data-fancybox-group="thumb")
-                                        img(src="/upload/iblock/6d1/6d1e6f36f1ab14840cbb855b039128b7.jpg", alt-="Портфолио натяжной потолок14")
-                                        |
-                                        .name Портфолио натяжной потолок14
-                                        |
-                                        .area Площадь: 26 м²
-                                        |
-                                        .price
-                                            | от
-                                            span 71 200
-                                |
-                                #bx_651765591_2887.swiper-slide
-                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/f05/f05a575e8aeef697db1118fe8beae45d.jpg", data-fancybox-group="thumb")
-                                        img(src="/upload/iblock/b18/b187d1b27855ae4a8f9a4ada1d26a373.jpg", alt-="Портфолио натяжной потолок13")
-                                        |
-                                        .name Портфолио натяжной потолок13
-                                        |
-                                        .area Площадь: 10 м²
-                                        |
-                                        .price
-                                            | от
-                                            span 122 000
-                                |
-                                #bx_651765591_2886.swiper-slide
-                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/583/58324a129b385d99c008cd6b83124156.jpg", data-fancybox-group="thumb")
-                                        img(src="/upload/iblock/7e1/7e1513757a43ad38f585e12bac2c08ea.jpg", alt-="Портфолио натяжной потолок5")
-                                        |
-                                        .name Портфолио натяжной потолок5
-                                        |
-                                        .area Площадь: 16 м²
-                                        |
-                                        .price
-                                            | от
-                                            span 32 861
-                                |
-                                #bx_651765591_2885.swiper-slide
-                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/0f7/0f7def663a2648b267c6af909f01e1b4.jpg", data-fancybox-group="thumb")
-                                        img(src="/upload/iblock/ba8/ba8145518536dd50f5ba6e0a6b880cd2.jpg", alt-="Портфолио натяжной потолок4")
-                                        |
-                                        .name Портфолио натяжной потолок4
-                                        |
-                                        .area Площадь: 16 м²
-                                        |
-                                        .price
-                                            | от
-                                            span 41 400
-                                |
-                                #bx_651765591_2884.swiper-slide
-                                    a.portfolio-section__slide.fancybox(href="/upload/iblock/cc2/cc2ba438601f0e4f2ad13cf4475767ea.jpg", data-fancybox-group="thumb")
-                                        img(src="/upload/iblock/07a/07aeb5118b7ac9d4c07a3fe2bd287b02.jpg", alt-="Портфолио натяжной потолок7")
-                                        |
-                                        .name Портфолио натяжной потолок7
-                                        |
-                                        .area Площадь: 12 м²
-                                        |
-                                        .price
-                                            | от
-                                            span 36 100
-                            |
+                                - for (var x = 0; x < 5; x++)
+                                    +ourPhotoWork()
+                            .swiper-pagination
                             .swiper-button-next
-                            |
                             .swiper-button-prev
             .container
             .not_like_our_price
@@ -293,30 +241,22 @@ html
                     .services_border
                         .page-title
                             h1 Услуги
-                        |
                         .services_examples
                             a#bx_1373509569_2872.services_item(href="/uslugi/ustanovka/")
                                 .services_foto_wrap
                                     img.services_foto(src="/upload/iblock/523/523d5255813d51383129cc42e1c3eb41.png", alt-="Установка")
-                                |
                                 .services_name Установка
-                            |
                             a#bx_1373509569_2870.services_item(href="/uslugi/sliv-vody/")
                                 .services_foto_wrap
                                     img.services_foto(src="/upload/iblock/037/037f48e1f8ce319d83fda42475bc34dd.png", alt-="Слив воды")
-                                |
                                 .services_name Слив воды
-                            |
                             a#bx_1373509569_2873.services_item(href="/uslugi/remont/")
                                 .services_foto_wrap
                                     img.services_foto(src="/upload/iblock/4aa/4aa70dbe7e04211ff16bb3aec42a238d.png", alt-="Ремонт")
-                                |
                                 .services_name Ремонт
-                            |
                             a#bx_1373509569_2869.services_item(href="/uslugi/zamena-polotna/")
                                 .services_foto_wrap
                                     img.services_foto(src="/upload/iblock/e19/e19fde50dbd97b1d0e4d987b32002e11.png", alt-="Замена полотна")
-                                |
                                 .services_name Замена полотна
             .teaser-two
                 .teaser-two-l

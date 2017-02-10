@@ -1,0 +1,32 @@
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  display: none;
+}
+
+@media screen and (max-width: 669px) {
+
+  .foto-our-works .container:after {
+    border: none;
+  }
+
+  .portfolio-section {
+    padding-bottom: 20px;
+
+  }
+
+  .swiper-pagination {
+    z-index: 1000;
+  }
+
+  .swiper-container-horizontal>.swiper-pagination-bullets{
+    bottom : -20px;
+    display: block;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
+
+  .swiper-container {
+    overflow: visible;
+  }
+}

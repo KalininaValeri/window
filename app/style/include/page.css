@@ -721,7 +721,7 @@
     content: '';
     position: absolute;
     background-color: #F7F7F7 !important;
-    bottom: 0;
+    top: 270px;
     height: 107px;
     z-index: 5;
 }
@@ -744,7 +744,7 @@
 }
 @media (max-width:670px) {
     .portfolio-section__slide {
-        /* 		width:375px; */
+         		width:380px;
     }
 }
 @media (max-width:320px) {
@@ -928,7 +928,7 @@
 }
 @media (max-width:670px) {
     .portfolio-section__slide {
-         		width:280px;
+         		width:380px;
     }
 }
 @media (max-width:320px) {
