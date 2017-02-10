@@ -2,6 +2,69 @@
   display: none;
 }
 
+.stages_work.mod--why_we {
+  .stages_work_item {
+    width: 190px;
+    margin-right: 0;
+  }
+
+  .stages_work_item:before {
+    background: #E3E4E4;
+    height: 1px;
+    width: 100%;
+    left: 54px;
+    top: 52px;
+  }
+
+  .stages_work_border {
+    height: auto;
+  }
+
+  .stages_work_name.mod-adaptive {
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 1920px) {
+  .stages_work.mod--why_we {
+    .furnitura, .srok {
+      display: none;
+    }
+  }
+
+}
+
+@media screen and (max-width: 959px) {
+  .stages_work.mod--why_we {
+    .furnitura, .srok {
+      display: block;
+    }
+
+    .stages_work_border {
+      height: 460px;
+    }
+
+    .stages_work_item {
+      width: 186px;
+    }
+
+    .stages_work_item.srok {
+      left: 47px;
+    }
+
+    .stages_work_item.why-services {
+      left: 234px;
+    }
+    .stages_work_item.personal{
+      left: 421px;
+      top: 207px;
+    }
+  }
+
+
+}
+
 @media screen and (max-width: 669px) {
 
   .foto-our-works .container:after {
@@ -43,6 +106,43 @@
     width: auto;
     padding-right: 15px;
     padding-left: 15px;
+  }
+
+  .stages_work.mod--why_we {
+    display: block;
+
+    .furnitura, .srok {
+      display: none;
+    }
+    .stages_work_border {
+      height: 480px;
+      border: none;
+    }
+
+    .stages_work_item {
+      width: 112px;
+    }
+
+    .stages_work_item.discount {
+      left: 0;
+    }
+
+    .stages_work_item.guaranty {
+      right: 0px;
+    }
+
+    .stages_work_item.why-services {
+      left: 0px;
+    }
+    .stages_work_item.personal{
+      right: 0px;
+    }
+    .stages_work_name.mod--personal {
+      display: none;
+    }
+    .stages_work_name.mod-adaptive {
+      display: block;
+    }
   }
 
 }
