@@ -182,16 +182,16 @@ html
                     .preloader__icon
                 .slider.fade
                     #bx_3218110189_2987.slider-item
-                        .image(data-src="../img/main-header-slider/6bd916991e2ec3f70cb620a277c04c4d.png", data-src960="../img/main-header-slider/2f1764282ad466b45dd69759fe084962.png", data-src670="../img/main-header-slider/354d37c0c108a665233184a8fc14792f.png")
+                        .image(data-src="../img/main-header-slider/main-slider.png", data-src960="../img/main-header-slider/main-slider.png", data-src670="../img/main-header-slider/main-slider.png")
                         +headerSlider("Фотопечать", "в подарок", "Мы дарим каждому клиенту 1 м² фотопечати", "")
                     #bx_3218110189_2986.slider-item
-                        .image(data-src="../img/main-header-slider/4fbd763ff2c9303e55ea944658c8a245.jpg", data-src960="../img/main-header-slider/a35f2aa5e2b19d03f187acf72c0ef902.jpg", data-src670="../img/main-header-slider/3427aaa7824a8e087fa183af005a1687.jpg")
+                        .image(data-src="../img/main-header-slider/main-slider.png", data-src960="../img/main-header-slider/main-slider.png", data-src670="../img/main-header-slider/main-slider.png")
                         +headerSlider("Второй потолок", "в подарок", "Каждое второе полотно получаете бесплатно", "")
                     #bx_3218110189_2985.slider-item
-                        .image(data-src="../img/main-header-slider/93564179ff5b77286ff8a7c97cf8a7ca.png", data-src960="../img/main-header-slider/29e995d12280a2cbff466b855a560e18.png", data-src670="../img/main-header-slider/f6a94c36ffea138b564b497f6777fe29.png")
+                        .image(data-src="../img/main-header-slider/main-slider.png", data-src960="../img/main-header-slider/main-slider.png", data-src670="../img/main-header-slider/main-slider.png")
                         +headerSlider("Вся квартира", "за 19 тысяч рублей", "Акция для владельцев квартир", "площадью до 40 квадратных метров")
                     #bx_3218110189_2984.slider-item
-                        .image(data-src="../img/main-header-slider/cbb01668deaee16525f85dd8470aab75.png", data-src960="../img/main-header-slider/d7808bd9ca1f7aaae342fa2354cdf1a2.png", data-src670="../img/main-header-slider/95122a8c98865a2228402cfef4242dd2.png")
+                        .image(data-src="../img/main-header-slider/main-slider.png", data-src960="../img/main-header-slider/main-slider.png", data-src670="../img/main-header-slider/main-slider.png")
                         +headerSlider("Беспроигрышная", "лотерея", "Получайте скидки и подарки в наших офисах", "")
                 style(type="text/css").
                     .breadcrumb {
@@ -270,9 +270,9 @@ html
                                                 - var list = ["Количество камер", "2 шт"]
                                                 each item in list
                                                     td #{item}
-                                        .portfolio-section__slide: .price от
-                                            span  3000
-                                        a(href="/order-call/" class="fbajax but-reg" title="Подробнее") Подробнее
+                                .portfolio-section__slide: .price от
+                                    span  3000
+                                a(href="/order-call/" class="fbajax but-reg" title="Подробнее") Подробнее
                         .types_item
                             .types_window.econom
                                 .row
@@ -292,10 +292,11 @@ html
                                                 - var list = ["Количество камер", "2 шт"]
                                                 each item in list
                                                     td #{item}
-                                        .portfolio-section__slide: .price от
-                                            span  3000
-                                        a(href="/order-call/" class="fbajax but-reg" title="Подробнее") Подробнее
-                    a.fbajax.but-reg(href="#") Нужна помощь в выборе
+                                .portfolio-section__slide: .price от
+                                    span  3000
+                                a(href="/order-call/" class="fbajax but-reg" title="Подробнее") Подробнее
+                    span.but-grey-wrap
+                        a.but-grey(href="#") Нужна помощь в выборе
 
             section.seo-text.mod--profil
                 .container

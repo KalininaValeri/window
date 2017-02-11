@@ -87,8 +87,7 @@
 
 //пластиковые окна
 .types-in.mod--windows {
-  margin: 0 -15px;
-
+  background: url("../img/page-main/types-fon.jpg") center top no-repeat;
   .types_item {
     width: percentage(1 / 3);
     margin: 0;
@@ -146,9 +145,20 @@
 
   .but-reg {
     position: static;
-    width: 180px;
-    margin: auto;
+    margin: 0;
+    width: auto;
   }
+
+
+
+}
+.mod--windoew_types .but-grey-wrap {
+  position: absolute;
+  bottom: -149px;
+  left: 50%;
+  margin-left: -225px;
+  padding: 0 40px;
+  background: #f5f4f5;
 }
 
 //какой профиль выбрать
@@ -233,6 +243,7 @@
 }
 
 .stages_work.mod--why_we {
+  background: white;
   .stages_work_item {
     width: 190px;
     margin-right: 0;
@@ -249,11 +260,19 @@
   .stages_work_border {
     height: auto;
   }
-
-  .stages_work_name.mod-adaptive {
+  .stages_work_name.mod--adaptive {
     display: none;
   }
+
+
+
 }
+
+.teaser-two {
+  margin-bottom: 60px;
+}
+
+
 
 #container {
   .item {
@@ -486,16 +505,18 @@
       img {
         margin-bottom: 30px;
         float: left;
-        margin-right: 120px;
+        margin-right: 100px;
         margin-left: 15px;
       }
 
-      table {
-        margin-bottom: 30px;
+      .types_window_text {
         float: left;
         width: 50%;
       }
 
+      table {
+        margin-bottom: 30px;
+      }
     }
 
     .portfolio-section__slide {
@@ -503,11 +524,7 @@
       margin-bottom: 30px;
     }
 
-    .but-reg {
-      position: static;
-      width: 180px;
-      margin: auto;
-    }
+
   }
 
   .seo-text.mod--profil {
@@ -630,10 +647,16 @@
         margin-right: 0;
       }
 
-      table {
+      .types_window_text {
         width: 100%;
       }
     }
+
+
+  }
+
+  .mod--windoew_types .but-grey-wrap {
+    display: none;
   }
   .seo-text.mod--profil {
     .seo-img {
@@ -649,7 +672,9 @@
       padding: 0 30px;
     }
   }
-
+  .foto-our-works {
+    background: #f9f9f9;
+  }
 
   .foto-our-works .container:after {
     border: none;
@@ -679,7 +704,9 @@
 
   .services_border {
     height: auto;
+    border: 1px solid #E3E4E4;
   }
+
 
   .services_item {
     width: auto;
@@ -693,7 +720,12 @@
   }
 
   .stages_work.mod--why_we {
+    background: none;
     display: block;
+
+    .page-title * {
+      background: none;
+    }
 
     .furnitura, .srok {
       display: none;
@@ -728,9 +760,8 @@
       display: block;
     }
   }
+}
 
-  .services_border {
-    border: none;
-  }
-
+.slider-block .slick-dots li button:before {
+  font-size: 50px!important;
 }
