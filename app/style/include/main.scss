@@ -1,4 +1,88 @@
-.swiper-container-horizontal>.swiper-pagination-bullets {
+.directions {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+}
+
+.directions_list {
+  margin-top: -26px;
+  color: #777676;
+  font-size: 16px; /* Приближение из-за подстановки шрифтов */
+  line-height: 19px; /* Приближение из-за подстановки шрифтов */
+  list-style-type: none;
+}
+
+.directions_list:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+.directions_item {
+  float: left;
+  width: 20%;
+  box-sizing: border-box;
+  height: 75px;
+  padding: 0;
+}
+
+.directions_item a {
+  display: block;
+  padding-left: 100px;
+  height: 100%;
+  position: relative;
+  box-sizing: padding-box;
+  line-height: 75px;
+}
+
+.directions_item a:hover {
+  text-decoration: none;
+  background: #e70000;
+  color: white;
+
+  .directions_item_img {
+    border-color: #e70000;
+  }
+}
+
+.directions_item_img {
+  z-index: 1000;
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.17),
+  inset 0px 1px 3px 0px rgba(0, 0, 0, 0.17);
+  border: 3px solid white;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: contain;
+}
+
+.directions_item_img.my_window {
+  background-image: url("../img/page-main/window.png");
+}
+
+.directions_item_img.balcony {
+  background-image: url("../img/page-main/balcony.png");
+}
+
+.directions_item_img.door {
+  background-image: url("../img/page-main/door.png");
+}
+
+.directions_item_img.curves {
+  background-image: url("../img/page-main/curves.png");
+}
+
+.directions_item_img.blids {
+  background-image: url("../img/page-main/blinds.png");
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
   display: none;
 }
 
@@ -21,9 +105,95 @@
   }
 
   .stages_work_name.mod-adaptive {
-    display: block;
+    display: none;
+  }
+}
+
+#container {
+  .item {
+    width: percentage(1 / 3);
+    box-sizing: border-box;
+    padding: 20px 15px;
+  }
+  .item:nth-child(1),
+  .item:nth-child(3),
+  .item:nth-child(6) {
   }
 
+  .item:nth-child(2),
+  .item:nth-child(4),
+  .item:nth-child(5) {
+  }
+}
+
+.mod--reviews {
+  background: #f5f4f5;
+
+  .services_border {
+    height: auto;
+    padding: 65px 15px;
+    position: relative;
+  }
+
+  .page-title {
+    position: absolute;
+    top: 0px;
+    left: 24%;
+
+    h1 {
+      background: #f5f4f5;
+    }
+  }
+
+  .but-grey-wrap {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    margin-left: -180px;
+    padding: 0 40px;
+    background: #f5f4f5;
+  }
+}
+
+.reviews_item {
+  color: #777777;
+  font-size: 13px; /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  line-height: 21px; /* Приближение из-за подстановки шрифтов */
+  text-align: left;
+  padding: 25px 20px;
+  position: relative;
+  background: white;
+
+  p {
+    margin: 0;
+  }
+
+  .reviews_item_photo {
+    height: 85px;
+    width: 85px;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.17);
+    background: url("../img/page-main/rev-photo.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    position: absolute;
+    top: -24px;
+    left: -8px;
+  }
+
+  .reviews_item_title {
+    color: #535252;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-left: 80px;
+  }
+
+  .reviews_item_title2 {
+    margin-bottom: 25px;
+    margin-left: 80px;
+  }
 }
 
 @media screen and (max-width: 1920px) {
@@ -33,9 +203,84 @@
     }
   }
 
+  #container {
+    .item {
+      width: percentage(1 / 2);
+    }
+    .item:nth-child(3),
+    .item:nth-child(4) {
+      display: none;
+    }
+  }
+
+  .stages_work {
+    background: #f5f4f5;
+  }
+
+  .stages_work_border {
+    border: none;
+
+    .page-title {
+      border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  body,
+  .header {
+    background: #ebebeb;
+  }
+
+
+  .directions {
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+  }
+
+  .directions_list {
+    margin-top: -26px;
+    color: #777676;
+    font-size: 16px; /* Приближение из-за подстановки шрифтов */
+    line-height: 19px; /* Приближение из-за подстановки шрифтов */
+    list-style-type: none;
+  }
+
+  .directions_item {
+    border-left: 1px solid #bfbfbf;
+    border-right: 1px solid white;
+    height: 50px;
+  }
+
+  .directions_item:last-child {
+    border-right: none;
+  }
+
+  .directions_item:first-child {
+    border-left: none;
+  }
+
+  .directions_item a {
+    background: linear-gradient(0deg, #d7d7d7 0%, #ffffff 100%);
+    padding: 0;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .directions_item a:hover {
+    text-decoration: none;
+    background: #e70000;
+    color: white;
+  }
+
+  .directions_item_img {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 959px) {
+  .directions_list {
+    margin-top: 0;
+  }
   .stages_work.mod--why_we {
     .furnitura, .srok {
       display: block;
@@ -56,16 +301,57 @@
     .stages_work_item.why-services {
       left: 234px;
     }
-    .stages_work_item.personal{
+    .stages_work_item.personal {
       left: 421px;
       top: 207px;
     }
   }
 
+  #container {
+    .item {
+      width: 100%;
+    }
+    .item:nth-child(5),
+    .item:nth-child(6) {
+      display: none;
+    }
+  }
 
 }
 
 @media screen and (max-width: 669px) {
+  .directions .container {
+    width: 100%;
+  }
+  .directions_list {
+    margin-top: -26px;
+    max-height: 50px;
+    overflow: hidden;
+    transition: max-height 0.15s ease-out;
+  }
+
+  .directions_item {
+    width: 100%;
+    border: none;
+  }
+
+  .directions_item:first-child a::after {
+    content: 'keyboard_arrow_down';
+    font-family: 'Material Icons';
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 30px;
+  }
+
+  .directions_list.active {
+    max-height: 300px;
+    transition: max-height 0.25s ease-in;
+
+    .directions_item:first-child a::after {
+      content: 'keyboard_arrow_up';
+    }
+  }
 
   .foto-our-works .container:after {
     border: none;
@@ -80,8 +366,8 @@
     z-index: 1000;
   }
 
-  .swiper-container-horizontal>.swiper-pagination-bullets{
-    bottom : -20px;
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: -20px;
     display: block;
   }
 
@@ -134,7 +420,7 @@
     .stages_work_item.why-services {
       left: 0px;
     }
-    .stages_work_item.personal{
+    .stages_work_item.personal {
       right: 0px;
     }
     .stages_work_name.mod--personal {
@@ -143,6 +429,10 @@
     .stages_work_name.mod-adaptive {
       display: block;
     }
+  }
+
+  .services_border {
+    border: none;
   }
 
 }

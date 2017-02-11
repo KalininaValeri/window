@@ -213,6 +213,22 @@ $(document).ready(function () {
     });
 
 
+    var container = document.querySelector('#container');
+    var msnry = new Masonry( container, {
+        // Настройки
+        // columnWidth: 200,
+        itemSelector: '.item'
+    });
 
-    console.log('123');
+    $('#directionItemWindow').click(function (e) {
+        var item = $('#directionItemWindow'),
+            parentItem = item.parents('.directions_list ');
+        parentItem.toggleClass('active');
+        item.focusout(function () {
+            parentItem.removeClass('active');
+        })
+    })
+
+
+
 });
