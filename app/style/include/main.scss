@@ -1,5 +1,8 @@
 .directions {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+  position: relative;
+  z-index: 1000;
+  background: white;
 }
 
 .directions_list {
@@ -148,6 +151,83 @@
   }
 }
 
+//какой профиль выбрать
+.seo-text.mod--profil {
+  background: white;
+  position: relative;
+
+  .seo-title {
+    width: 1000px;
+    margin-left: -20px;
+
+    .smallScreen {
+      display: none;
+    }
+  }
+
+  .seo-text-border {
+    padding-left: 60px;
+    padding-right: 400px;
+  }
+
+  .seo-text-border h1,
+  .seo-text-border h1 span{
+    background: white;
+  }
+
+  .seo-img {
+    text-align: justify;
+    vertical-align: middle;
+    padding: 0 40px;
+    margin-bottom: 60px;
+
+    .seo-li {
+      display: inline-block;
+      text-align: justify;
+    }
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .seo-img::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+  }
+
+  .seo-text-content {
+    margin-bottom: 60px;
+
+    p{
+      text-align: justify;
+    }
+  }
+
+  .btn-wrapper {
+    position: absolute;
+    left: 96px;
+
+    .but-reg {
+      width: auto;
+      padding: 0 40px;
+    }
+  }
+
+  .profit_img {
+    height: 490px;
+    width: 490px;
+    background: url("../img/page-main/baba.png") 0 50% no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
 .swiper-container-horizontal > .swiper-pagination-bullets {
   display: none;
 }
@@ -269,6 +349,10 @@
     }
   }
 
+  .seo-text.mod--profil {
+    background: none;
+  }
+
   #container {
     .item {
       width: percentage(1 / 2);
@@ -343,6 +427,36 @@
   .directions_item_img {
     display: none;
   }
+
+  .seo-text.mod--profil {
+    .seo-title {
+      width: 745px;
+      margin-left: 10px;
+
+      h1{
+        font-size: 34px;
+      }
+    }
+
+    .seo-text-border {
+      padding-right: 240px;
+      padding-left: 10px;
+    }
+
+    .profit_img {
+      width: 435px;
+      background-position:0% 50%;
+      right: 0;
+    }
+
+    .btn-wrapper {
+      left: 51px;
+    }
+
+    .but-reg span {
+      display: none;
+    }
+  }
 }
 
 @media screen and (max-width: 959px) {
@@ -355,7 +469,6 @@
   }
 
   .types-in.mod--windows {
-    margin: 0 -15px;
 
     .types_item {
       width: 100%;
@@ -394,6 +507,44 @@
       position: static;
       width: 180px;
       margin: auto;
+    }
+  }
+
+  .seo-text.mod--profil {
+    text-align: center;
+    .seo-text-border {
+      padding: 0;
+    }
+    .seo-title {
+      width: 100%;
+      .bigScreen {
+        display: none;
+      }
+      .smallScreen {
+        display: inline;
+      }
+    }
+
+    .seo-text-content {
+      padding-left: 50px;
+      padding-right: 50px;
+
+      p {
+        text-align: center;
+      }
+    }
+
+   .btn-wrapper {
+      position: static;
+
+      .but-reg {
+        display: inline-block;
+      }
+    }
+
+
+    .profit_img {
+      display: none;
     }
   }
 
@@ -470,6 +621,7 @@
   }
 
   .types-in.mod--windows {
+    margin: 0;
     .types_window {
 
       img {
@@ -483,6 +635,21 @@
       }
     }
   }
+  .seo-text.mod--profil {
+    .seo-img {
+      margin: 0;
+      .seo-li {
+        display: block;
+        text-align: center;
+        margin-bottom: 22px;
+      }
+    }
+
+    .btn-wrapper .but-reg {
+      padding: 0 30px;
+    }
+  }
+
 
   .foto-our-works .container:after {
     border: none;

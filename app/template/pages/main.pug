@@ -224,7 +224,7 @@ html
                             a(href="#") Жалюзи
                                 .directions_item_img.blids
         main#page-city.container
-            .types.mod--windoew_types
+            section.types.mod--windoew_types
                 .container
                     .page-title
                         h2 Пластиковые окна
@@ -255,47 +255,72 @@ html
                             .types_window.econom
                                 .row
                                     img(src="../img/page-main/window_comfort.png")
-                                        .types_window_text
-                                            table
-                                                caption Эконом
-                                                tr
-                                                    - var list = ["Ширина стелкопакета", "32 мм"]
-                                                    each item in list
-                                                        td #{item}
-                                                tr
-                                                    - var list = ["Ширина профиля", "60 мм"]
-                                                    each item in list
-                                                        td #{item}
-                                                tr
-                                                    - var list = ["Количество камер", "2 шт"]
-                                                    each item in list
-                                                        td #{item}
-                                            .portfolio-section__slide: .price от
-                                                span  3000
-                                            a(href="/order-call/" class="fbajax but-reg" title="Подробнее") Подробнее
+                                    .types_window_text
+                                        table
+                                            caption Эконом
+                                            tr
+                                                - var list = ["Ширина стелкопакета", "32 мм"]
+                                                each item in list
+                                                    td #{item}
+                                            tr
+                                                - var list = ["Ширина профиля", "60 мм"]
+                                                each item in list
+                                                    td #{item}
+                                            tr
+                                                - var list = ["Количество камер", "2 шт"]
+                                                each item in list
+                                                    td #{item}
+                                        .portfolio-section__slide: .price от
+                                            span  3000
+                                        a(href="/order-call/" class="fbajax but-reg" title="Подробнее") Подробнее
                         .types_item
                             .types_window.econom
                                 .row
                                     img(src="../img/page-main/window_comfort.png")
-                                        .types_window_text
-                                            table
-                                                caption Эконом
-                                                tr
-                                                    - var list = ["Ширина стелкопакета", "32 мм"]
-                                                    each item in list
-                                                        td #{item}
-                                                tr
-                                                    - var list = ["Ширина профиля", "60 мм"]
-                                                    each item in list
-                                                        td #{item}
-                                                tr
-                                                    - var list = ["Количество камер", "2 шт"]
-                                                    each item in list
-                                                        td #{item}
-                                            .portfolio-section__slide: .price от
-                                                span  3000
-                                            a(href="/order-call/" class="fbajax but-reg" title="Подробнее") Подробнее
+                                    .types_window_text
+                                        table
+                                            caption Эконом
+                                            tr
+                                                - var list = ["Ширина стелкопакета", "32 мм"]
+                                                each item in list
+                                                    td #{item}
+                                            tr
+                                                - var list = ["Ширина профиля", "60 мм"]
+                                                each item in list
+                                                    td #{item}
+                                            tr
+                                                - var list = ["Количество камер", "2 шт"]
+                                                each item in list
+                                                    td #{item}
+                                        .portfolio-section__slide: .price от
+                                            span  3000
+                                        a(href="/order-call/" class="fbajax but-reg" title="Подробнее") Подробнее
                     a.fbajax.but-reg(href="#") Нужна помощь в выборе
+
+            section.seo-text.mod--profil
+                .container
+                    .seo-text-border
+                        .seo-title
+                            h1
+                                span.bigScreen КАКую ПРОФИЛЬНУЮ СИСТЕМУ
+                                span.smallScreen какой профиль
+                                |    ВЫБРАТЬ?
+                        .seo-img
+                            .seo-li
+                                img(src="../img/page-main/rehau.png")
+                            .seo-li
+                                img(src="../img/page-main/veka.png")
+                            .seo-li
+                                img(src="../img/page-main/kbe.png")
+                            .seo-li
+                                img(src="../img/page-main/deceuninck.png")
+                        .seo-text-content
+                            p
+                                | Качественный профиль — залог долговечности пластикового окна. Как не растеряться в многообразии марок и характеристик? Узнайте, какой профиль подойдёт именно вам — оставьте заявку, и мы проконсультируем вас совершенно бесплатно.
+                        .btn-wrapper
+                            a.but-reg(href="#") Получить консультацию
+                                span  специалиста
+                .profit_img
 
             section.foto-our-works
                 .container
@@ -493,7 +518,6 @@ html
                                 .stages_work_name
                                     | Принятие работы
             .seo-text
-
                 .container
                     .seo-text-border
                         .seo-title
